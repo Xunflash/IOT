@@ -1,2 +1,2 @@
 # IOT
-iot vuls
+iot vulns

