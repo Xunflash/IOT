@@ -1,4 +1,4 @@
-# EDIMAX BR-6208AC_1.32
+# EDIMAX BR-6208AC_1.32 formAutoFWupgrade Command Injection
 
 ## Affected version:
 
@@ -8,9 +8,11 @@ EDIMAX BR-6208AC_1.32
 
 To download the firmware: https://www.edimax.com/edimax/mw/cufiles/files/download/Firmware/BR-6208AC_1.32.zip
 
+You can use FirmAE to simulate the router environment.
+
 ## Description
 
-There is a dangerous function in EDIMAX BR-6208AC_1.32 that allows command injection attacks without login. By controlling the "zipfile" parameter in the /goform/formAutoFWupgrade API within EDIMAX BR-6208AC_1.32, a command injection attack can be caused. Attackers can exploit this vulnerability by sending carefully crafted requests to the web-based management interface. A successful exploitation of the vulnerability can allow the attacker to attack the device's /bin/webs service, resulting in a command injection attack.
+There is a dangerous function in EDIMAX BR-6208AC_1.32 that allows command injection attacks without login. By controlling the "zipfile" parameter in the /goform/formAutoFWupgrade API within EDIMAX BR-6208AC_1.32, a command injection attack can be caused. Attackers can exploit this vulnerability by sending carefully crafted requests to the web-based management interface. A successful exploitation of the vulnerability can allow the attacker to attack the device's /bin/webs service, resulting in a command injection attack. Users can create a sustained and stable attack effect by using command injection to execute actions such as bouncing a shell with "sh".
 
 In the formAutoFWupgrade function, the "submit-url" and "action" parameters are first received, with the "action" parameter used to determine which branch of code to execute next. 
 
